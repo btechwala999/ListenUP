@@ -12,17 +12,24 @@
 <body>
     <div class="container flex bg-black">
         <div class="left bg-black">
+            <div class="close invert">
+                <img src="assets/svg/close.svg" alt="">
+            </div>
             <div class="home bg-grey rounded">
                 <div class="logo"><img class="invert" src="assets/svg/logo.svg" alt=""></div>
                 <ul>
-                    <li><img class="invert" src="assets/svg/home.svg" alt="home">Home</li>
-                    <li><img class="invert" src="assets/svg/search.svg" alt="search">Search</li>
+                    <li><img class="invert" src="assets/svg/home.svg" alt="home"><span>Home</span></li>
+                    <li><img class="invert" src="assets/svg/search.svg" alt="search"><span>Search</span></li>
                 </ul>
             </div>
             <div class="library rounded bg-grey">
                 <div class="heading"><img class="invert" src="assets/svg/your_library.svg" alt="">
                     <h2>Your</h2>
                     <h2 class="h21">Library</h2>
+                </div>
+                <div class="songLists">
+                    <ul>
+                    </ul>
                 </div>
                 <div class="footer">
                     <div>
@@ -62,6 +69,9 @@
         <div class="right bg-grey rounded">
             <div class="header">
                 <div class="nav">
+                    <div class="hamburger invert">
+                        <img width="28px" src="assets/svg/hamburger.svg" alt="">
+                    </div>
                     <svg xmlns="http://www.w3.org/2000/svg" class="invert" viewBox="0 0 24 24" width="24" height="24"
                         color="#000000" fill="none">
                         <path d="M15 6C15 6 9.00001 10.4189 9 12C8.99999 13.5812 15 18 15 18" stroke="currentColor"
@@ -74,33 +84,68 @@
                     </svg>
                 </div>
                 <div class="buttons">
-                    <button>Sign up</button>
-                    <button>Log in</button>
+                    <button class="Sign_up_bt">Sign up</button>
+                    <button class="Log_in_bt">Log in</button>
                 </div>
             </div>
             <div class="spotifyPlaylists">
                 <h1>Spotify Playlists</h1>
                 <div class="cardContainer">
-                    <div class="card">
-                        <div class="play">
-                            
-                        </div>
-                        <img aria-hidden="false" draggable="false" loading="lazy" src="https://i.scdn.co/image/ab67706f000000029385ce8e365c6b8ba3f70d4b" data-testid="card-image" alt="" class="mMx2LUixlnN_Fu45JpFB yMQTWVwLJ5bV8VGiaqU3 yOKoknIYYzAE90pe7_SE Yn2Ei5QZn19gria6LjZj">
-                        <p>Just lean back and enjoy relaxed beats.</p>
-
-                    </div>
-
-                    <div class="card">
-                        <img aria-hidden="false" draggable="false" loading="lazy" src="https://i.scdn.co/image/ab67706f000000029385ce8e365c6b8ba3f70d4b" data-testid="card-image" alt="" class="mMx2LUixlnN_Fu45JpFB yMQTWVwLJ5bV8VGiaqU3 yOKoknIYYzAE90pe7_SE Yn2Ei5QZn19gria6LjZj">
-                        <p>Just lean back and enjoy relaxed beats.</p>
+                </div>
+            </div>
+            <div class="playbar">
+                <div class="seekbar">
+                    <div class="circle">
 
                     </div>
                 </div>
-                
+                <div class="abovebar">
+
+
+                    <div class="songinfo">
+
+                    </div>
+                    <div class="soundbuttons">
+                        <svg id="previous" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="28" height="28"
+                            fill="currentcolor">
+                            <path
+                                d="M8.06492 12.6258C8.31931 13.8374 9.67295 14.7077 12.3802 16.4481C15.3247 18.3411 16.797 19.2876 17.9895 18.9229C18.3934 18.7994 18.7654 18.5823 19.0777 18.2876C20 17.4178 20 15.6118 20 12C20 8.38816 20 6.58224 19.0777 5.71235C18.7654 5.41773 18.3934 5.20057 17.9895 5.07707C16.797 4.71243 15.3247 5.6589 12.3802 7.55186C9.67295 9.29233 8.31931 10.1626 8.06492 11.3742C7.97836 11.7865 7.97836 12.2135 8.06492 12.6258Z"
+                                stroke="currentcolor" stroke-width="1.5" stroke-linejoin="round" />
+                            <path d="M4 4L4 20" stroke="currentcolor" stroke-width="1.5" stroke-linecap="round" />
+                        </svg>
+
+                        <div id="play">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="34"
+                                height="34">
+                                <circle cx="12" cy="12" r="12" fill="currentcolor" />
+                                <polygon points="9,7 9,17 17,12" fill="#000000" />
+                            </svg>
+                        </div>
+                        <svg id="next" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="28" height="28"
+                            fill="currentcolor">
+                            <path
+                                d="M15.9351 12.6258C15.6807 13.8374 14.327 14.7077 11.6198 16.4481C8.67528 18.3411 7.20303 19.2876 6.01052 18.9229C5.60662 18.7994 5.23463 18.5823 4.92227 18.2876C4 17.4178 4 15.6118 4 12C4 8.38816 4 6.58224 4.92227 5.71235C5.23463 5.41773 5.60662 5.20057 6.01052 5.07707C7.20304 4.71243 8.67528 5.6589 11.6198 7.55186C14.327 9.29233 15.6807 10.1626 15.9351 11.3742C16.0216 11.7865 16.0216 12.2135 15.9351 12.6258Z"
+                                stroke="currentcolor" stroke-width="1.5" stroke-linejoin="round" />
+                            <path d="M20 5V19" stroke="currentcolor" stroke-width="1.5" stroke-linecap="round" />
+                        </svg>
+                    </div>
+                    <div class="timevol" style="display: flex; justify-content: center; align-items: center;">
+                        <div class="songtime">
+
+                        </div>
+                        <div class="volume">
+                            <img id="volume" src="assets/svg/volume30.svg" alt="">
+                            <div class="range">
+                                <input type="range" name="volume">
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
 
         </div>
     </div>
+    <script src="script.js"></script>
 
 </body>
 
